@@ -21,7 +21,7 @@ public class UserController {
 
     @GetMapping
     public List<User> getUsers() {
-        LOGGER.info("Получить всех юзеров");
+        LOGGER.info("Получить всех пользователей");
         return new ArrayList<>(users.values());
     }
 
@@ -61,7 +61,7 @@ public class UserController {
             user.setName(user.getLogin());
         }
         if (user.getBirthday().isAfter(LocalDate.now())) {
-            LOGGER.error("Неверный день рождения: ", user.getBirthday());
+            LOGGER.error("Неверная дата рождения: ", user.getBirthday());
             throw new ValidationException("Дата рождения не может быть в будущем");
         }
     }

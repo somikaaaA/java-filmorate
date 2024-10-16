@@ -37,7 +37,7 @@ public class FilmController {
         if (film.getDescription() != null) {
             if (film.getDescription().length() > MAX_DESCRIPTION_LENGTH) {
                 LOG.warn("Описание фильма слишком длинное");
-                throw new ValidationException("Описание фильма не может превышать " + MAX_DESCRIPTION_LENGTH + " символов");
+                throw new ValidationException("Описание фильма не может содержать более " + MAX_DESCRIPTION_LENGTH + " символов");
             }
         }
         if (film.getReleaseDate().isBefore(MIN_RELEASE_DATE)) {
