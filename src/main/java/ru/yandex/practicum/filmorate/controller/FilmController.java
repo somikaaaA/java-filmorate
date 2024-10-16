@@ -23,7 +23,7 @@ public class FilmController {
     private final HashMap<Long, Film> films = new HashMap<>();
 
     @PostMapping()
-    public Film addFilm(@Valid @RequestBody Film film) {
+    public Film addFilm(@RequestBody Film film) {
         filmValidation(film);
         film.setId(++id);
         films.put(film.getId(), film);
@@ -52,7 +52,7 @@ public class FilmController {
     }
 
     @PutMapping
-    public Film updateFilm(@Valid @RequestBody Film film) {
+    public Film updateFilm(@RequestBody Film film) {
         LOG.info("Пришел PUT запрос /films с телом: {}", film);
         Long filmId = film.getId();
         if (films.containsKey(filmId)) {
