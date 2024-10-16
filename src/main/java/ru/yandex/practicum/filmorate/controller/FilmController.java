@@ -1,5 +1,7 @@
 package ru.yandex.practicum.filmorate.controller;
 
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +24,7 @@ public class FilmController {
     private final HashMap<Long, Film> films = new HashMap<>();
 
     @PostMapping()
-    public Film addFilm(@RequestBody Film film) {
+    public Film addFilm(@Valid @RequestBody Film film) {
         filmValidation(film);
         film.setId(++id);
         films.put(film.getId(), film);
@@ -51,7 +53,7 @@ public class FilmController {
     }
 
     @PutMapping
-    public Film updateFilm(@RequestBody Film film) {
+    public Film updateFilm(@Valid @RequestBody Film film) {
         LOG.info("Пришел PUT запрос /films с телом: {}", film);
         Long filmId = film.getId();
         if (films.containsKey(filmId)) {

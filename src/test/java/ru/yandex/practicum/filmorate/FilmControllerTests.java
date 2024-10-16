@@ -30,11 +30,7 @@ public class FilmControllerTests {
         Film film = new Film();
         film.setDuration(1);
         film.setName("Mama Mia!");
-        film.setDescription("Софи собирается замуж и мечтает, чтобы церемония прошла " +
-                "по всем правилам. Она хочет пригласить на свадьбу отца, " +
-                "чтобы он провёл её к алтарю, но не знает, кто он, так как мать никогда не " +
-                "рассказывала о нём. Софи находит дневник матери, в котором та описывает " +
-                "отношения с тремя мужчинами. Софи решает отправить приглашения всем троим.");
+        film.setDescription("a".repeat(201));
         Exception exception = Assertions.assertThrows(ValidationException.class, () -> filmController.addFilm(film));
         Assertions.assertEquals("Описание фильма не может содержать более 200 символов", exception.getMessage());
     }
