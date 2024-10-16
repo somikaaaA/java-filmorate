@@ -34,7 +34,7 @@ public class UserControllerTests {
     }
 
     @Test
-    public void birthdayIsAfterTodayTest (){
+    public void birthdayIsAfterTodayTest () {
         User user = new User();
         user.setEmail("rasqq2qq@gmail.com");
         user.setLogin("rasqq2qq");

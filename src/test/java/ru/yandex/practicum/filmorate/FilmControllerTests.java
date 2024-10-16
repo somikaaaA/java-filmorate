@@ -16,15 +16,13 @@ public class FilmControllerTests {
     private FilmController filmController;
 
     @Test
-    public void filmNameIsBlankTest(){
+    public void filmNameIsBlankTest() {
         Film film = new Film();
         film.setDuration(1);
         film.setName("");
         film.setReleaseDate(LocalDate.of(2008, 1, 1));
-        Exception exception = Assertions.assertThrows
-                (ValidationException.class, () -> filmController.addFilm(film));
+        Exception exception = Assertions.assertThrows(ValidationException.class, () -> filmController.addFilm(film));
         Assertions.assertEquals("Название фильма не может быть пустым", exception.getMessage());
-
     }
 
     @Test
