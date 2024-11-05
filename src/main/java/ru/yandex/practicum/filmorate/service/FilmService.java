@@ -43,6 +43,12 @@ public class FilmService {
                 .toList();
     }
 
+//    public void checkFilm(long filmId) {
+//        if (filmStorage.getFilmById(filmId) == null) {
+//            throw new NotFoundException("Фильм с таким id не найден.");
+//        }
+//    }
+
     private void checkFilmUser(long userId, long filmId) {
         if (userStorage.getUserById(userId) == null) {
             throw new NotFoundException("Пользователь с таким id не найден.");

@@ -60,4 +60,10 @@ public class UserService {
             throw new NotFoundException("Пользователь с таким id не существует " + friendId);
         }
     }
+
+//    private void checkFriends (long friendId) {
+//        if (userStorage.getUserById(friendId) == null) {
+//            throw new NotFoundException("Пользователь с таким id не существует " + friendId);
+//        }
+//    }
 }
