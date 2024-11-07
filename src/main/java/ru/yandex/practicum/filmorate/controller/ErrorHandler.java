@@ -29,14 +29,14 @@ public class ErrorHandler {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) //500
-    public ErrorResponse HandleAllExceptions(Exception e) {
+    public ErrorResponse handleAllExceptions(Exception e) {
         log.error("Unexpected error occurred", e);
         return new ErrorResponse("An unexpected error occurred");
     }
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST) //400
-    public ErrorResponse HandleMethodArgumentNotValid(MethodArgumentNotValidException e) {
+    public ErrorResponse handleMethodArgumentNotValid(MethodArgumentNotValidException e) {
         log.error("Validation exception {}", e.getMessage());
         return new ErrorResponse(e.getMessage());
     }
