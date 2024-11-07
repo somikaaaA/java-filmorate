@@ -1,19 +1,22 @@
 package ru.yandex.practicum.filmorate;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import ru.yandex.practicum.filmorate.controller.UserController;
 import ru.yandex.practicum.filmorate.exception.ValidationException;
 import ru.yandex.practicum.filmorate.model.User;
+import ru.yandex.practicum.filmorate.storage.user.InMemoryUserStorage;
+import ru.yandex.practicum.filmorate.storage.user.UserStorage;
 
 import java.time.LocalDate;
 
 @SpringBootTest
 public class UserControllerTests {
-    static UserController userController = new UserController();
+    static UserStorage userController = new InMemoryUserStorage();
 
     @Test
+    @DisplayName("Создать пользователя без логина")
     public void emailIsBlankTest() {
         User user = new User();
         user.setEmail("rasqq2qq@gmail.com");
@@ -23,6 +26,7 @@ public class UserControllerTests {
     }
 
     @Test
+    @DisplayName("Создать пользователя без имени")
     public void nameIsBlankTest() {
         User user = new User();
         user.setEmail("rasqq2qq@gmail.com");
@@ -34,6 +38,7 @@ public class UserControllerTests {
     }
 
     @Test
+    @DisplayName("Создать пользователя с датой рождения в будущем")
     public void birthdayIsAfterTodayTest() {
         User user = new User();
         user.setEmail("rasqq2qq@gmail.com");

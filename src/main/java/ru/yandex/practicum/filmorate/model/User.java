@@ -8,11 +8,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @EqualsAndHashCode
 public class User {
-    private Long id;
+    private long id;
     @Email
     private String email;
     @NotBlank
@@ -22,4 +23,5 @@ public class User {
     @PastOrPresent
     @NotNull
     private LocalDate birthday;
+    private Set<Long> friends;
 }
