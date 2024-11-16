@@ -4,17 +4,18 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Setter
+@Builder
 public class Film {
-    private Long id;
+    private int id;
     @NotBlank(message = "Название фильма не должно быть пустым.")
     private String name;
     @Size(min = 1, max = 200, message = "Описание не должно содержать более 200 символов.")
@@ -23,5 +24,8 @@ public class Film {
     private LocalDate releaseDate;
     @Min(value = 1, message = "Продолжительность должна быть положительным числом.")
     private Integer duration;
-    private final Set<Long> like = new HashSet<>();
+    //private final Set<Long> like = new HashSet<>();
+    private int like;
+    private Mpa mpa;
+    private List<Genre> genres;
 }
