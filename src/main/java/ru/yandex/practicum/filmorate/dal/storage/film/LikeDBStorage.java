@@ -23,6 +23,7 @@ public class LikeDBStorage extends DBStorage {
                 userId
         );
     }
+
     public void deleteLike(int filmId, int userId) {
         update(
                 DELETE_LIKE_QUERY,
