@@ -40,10 +40,6 @@ public class FilmService {
         User user = userService.findUser(userId);
         List<User> list = likes.isEmpty() | !likes.containsKey(filmId) ? new ArrayList<>() :
                 likes.get(filmId);
-//        if (list.contains(user)) {
-//            log.error("Пользователь повторно поставил лайк");
-//            throw new ValidationException("Пользователь " + user.getName() + " уже голосовал за фильм " + film.getName());
-//        }
         list.add(user);
         likes.put(filmId, list);
         film.setLike(likes.get(filmId).size());
@@ -105,7 +101,5 @@ public class FilmService {
     public boolean isDateNull(LocalDate date) {
         return date == null;
     }
-
-
 }
 

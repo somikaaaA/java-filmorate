@@ -48,8 +48,3 @@ CREATE TABLE IF NOT EXISTS filmGenre (
   film_id INTEGER REFERENCES films (id),
   genre_id INTEGER REFERENCES genre (id)
 );
-
-
-
-
-

@@ -24,7 +24,6 @@ public class Film {
     private LocalDate releaseDate;
     @Min(value = 1, message = "Продолжительность должна быть положительным числом.")
     private Integer duration;
-    //private final Set<Long> like = new HashSet<>();
     private int like;
     private Mpa mpa;
     private List<Genre> genres;

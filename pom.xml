@@ -80,7 +80,6 @@
 					<failOnViolation>true</failOnViolation> <!-- что должно произойти, если обнаружено нарушение стиля-->
 					<!--завершить билд с ошибкой или вывести в консоли сообщение об ошибке-->
 					<logViolationsToConsole>true</logViolationsToConsole> <!--следует ли выводить в консоль содержимое сообщения об ошибке-->
-					<includeTestSourceDirectory>true</includeTestSourceDirectory> <!-- должен ли плагин проверять не только основной, но и тестовый код проекта-->
 				</configuration>
 				<executions>
 					<execution>

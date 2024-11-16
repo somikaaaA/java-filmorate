@@ -1,6 +1,6 @@
 
-MERGE INTO genre AS g --MERGE сливаем данные из одной таблицы в другую
-USING (VALUES         --создает временную таблицу source, кот.содержит одно поле genre_name
+MERGE INTO genre AS g
+USING (VALUES
 ('Комедия'),
 ('Драма'),
 ('Мультфильм'),
@@ -8,9 +8,9 @@ USING (VALUES         --создает временную таблицу source,
 ('Документальный'),
 ('Боевик')
 )AS source(genre_name)
-ON g.name = source.genre_name --условие соединения, которое определяет, как сливаются записи
-WHEN NOT MATCHED THEN -- указывает, что делать, если записи из `source` не находят совпадения в таблице `genre`
-INSERT (name) VALUES (source.genre_name); --в колонку `name` таблицы `genre` вставлять данные genre_name из табл. source
+ON g.name = source.genre_name
+WHEN NOT MATCHED THEN
+INSERT (name) VALUES (source.genre_name);
 
 
 MERGE INTO rating AS r

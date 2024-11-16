@@ -46,7 +46,6 @@ public class FilmDBService {
         this.likeDBStorage = likeDBStorage;
         this.mpaDBStorage = mpaDBStorage;
         this.filmGenreDBStorage = filmGenreDBStorage;
-
     }
 
     public FilmDto addFilm(Film film) {

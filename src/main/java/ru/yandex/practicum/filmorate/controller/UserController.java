@@ -23,7 +23,7 @@ import java.util.Map;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
-    final UserDBService userDBService;
+    private final UserDBService userDBService;
 
     @PostMapping
     public UserDto addUser(@Valid @RequestBody User user) {

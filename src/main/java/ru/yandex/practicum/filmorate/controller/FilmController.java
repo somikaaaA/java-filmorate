@@ -22,7 +22,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 public class FilmController {
-    final FilmDBService filmDBService;
+    private final FilmDBService filmDBService;
 
     @PostMapping("/films")
     public FilmDto addFilm(@Valid @RequestBody Film film) {
