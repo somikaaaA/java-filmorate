@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import ru.yandex.practicum.filmorate.validation.DataReleaseValid;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Film {
     private String name;
     @Size(min = 1, max = 200, message = "Описание не должно содержать более 200 символов.")
     private String description;
-    @NotNull
+    @DataReleaseValid
     private LocalDate releaseDate;
     @Min(value = 1, message = "Продолжительность должна быть положительным числом.")
     private Integer duration;

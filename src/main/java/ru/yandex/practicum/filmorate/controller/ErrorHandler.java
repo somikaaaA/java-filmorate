@@ -60,7 +60,6 @@ public class ErrorHandler {
     @ExceptionHandler
     @ResponseStatus(HttpStatus.OK) //200
     public ErrorResponse friendNotFound(NotFriendException e) {
-        log.error("Friends not found");
         return new ErrorResponse(e.getMessage());
     }
 
