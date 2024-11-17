@@ -4,17 +4,17 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 @Data
-@EqualsAndHashCode
+@Builder
 public class User {
-    private long id;
+    private int id;
     @Email
+    @NotBlank
     private String email;
     @NotBlank
     private String login;
@@ -23,5 +23,4 @@ public class User {
     @PastOrPresent
     @NotNull
     private LocalDate birthday;
-    private Set<Long> friends;
 }
